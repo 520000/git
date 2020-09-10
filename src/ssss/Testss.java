@@ -35,6 +35,31 @@ public class Testss {
         System.out.println(returnStr1);// 外
         SubThread2 subThread2 = new SubThread2();
         subThread2.start();
+        int dsd =1;
+        System.out.println( dsd++);//1
+        dsd =1;
+        int c = dsd++-1;
+        System.out.println(c);//0
+        dsd =1;
+        int c1 = dsd++;
+        System.out.println(c1);//1
+        dsd =1;
+        dsd += dsd++;
+        System.out.println(dsd);//2
+        dsd =1;
+        dsd += ++dsd;
+        System.out.println(dsd);//3
+        int i5 = 1;
+        int i4 = (++i5) + (++i5);
+        System.out.println(i4);// 5
+
+        int a = 0;
+        int b = 0;
+        for(int z = 0; z < 99;++z){
+            a = a++;
+            b = a++;
+        }
+        System.out.println(a +""+b);
     }
 
 
@@ -42,13 +67,13 @@ public class Testss {
 
  class SubThread2 extends Thread {
     public SubThread2() {
-        System.out.println(" 构 造 方 法 中 ,Thread.currentThread().getName() : " + Thread.currentThread().getName());
-        System.out.println("构造方法,this.getName() : " + this.getName());
+        System.out.println(" 构 造 方 法 中 ,Thread.currentThread().getName() : " + Thread.currentThread().getName());// run 方 法 中 ,Thread.currentThread().getName() : main
+        System.out.println("构造方法,this.getName() : " + this.getName());//run 方法,this.getName() : Thread-0
     }
 
     @Override
     public void run() {
-        System.out.println("run 方 法 中 ,Thread.currentThread().getName() : " + Thread.currentThread().getName());
-        System.out.println("run 方法,this.getName() : " + this.getName());
+        System.out.println("run 方 法 中 ,Thread.currentThread().getName() : " + Thread.currentThread().getName());// run 方 法 中 ,Thread.currentThread().getName() : Thread-0
+        System.out.println("run 方法,this.getName() : " + this.getName());//run 方法,this.getName() : Thread-0
     }
 }
